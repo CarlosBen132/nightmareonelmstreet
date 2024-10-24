@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div style="max-width: 600px; margin: 20px auto; font-family: system-ui, -apple-system, sans-serif; background: #1a1a2e; color: white; padding: 20px; border-radius: 10px;">
+        <h1 style="color: #ff4444; margin-bottom: 20px;">Nightmare on Elm Street Watch List</h1>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>1. A Nightmare on Elm Street (1984)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>2. A Nightmare on Elm Street 2: Freddy's Revenge (1985)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>3. A Nightmare on Elm Street 3: Dream Warriors (1987)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>4. A Nightmare on Elm Street 4: The Dream Master (1988)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>5. A Nightmare on Elm Street 5: The Dream Child (1989)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>6. Freddy's Dead: The Final Nightmare (1991)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>7. Wes Craven's New Nightmare (1994)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>8. Freddy vs. Jason (2003)</span>
+            </label>
+
+            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; cursor: pointer;">
+                <input type="checkbox" style="width: 20px; height: 20px;">
+                <span>9. A Nightmare on Elm Street (2010)</span>
+            </label>
+        </div>
+
+        <div id="progress" style="margin-top: 20px; text-align: center; font-size: 1.2em;">
+            Movies watched: <span id="count">0</span>/9
+        </div>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const countSpan = document.getElementById('count');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                countSpan.textContent = checkedCount;
+                
+                if (checkbox.checked) {
+                    checkbox.parentElement.style.textDecoration = 'line-through';
+                    checkbox.parentElement.style.opacity = '0.6';
+                } else {
+                    checkbox.parentElement.style.textDecoration = 'none';
+                    checkbox.parentElement.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
